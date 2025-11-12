@@ -1,4 +1,11 @@
 services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    labels:
+      - "logging=true"
+
   react-app-prod:
     build:
       context: .
