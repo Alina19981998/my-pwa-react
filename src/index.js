@@ -11,12 +11,19 @@ root.render(
     </React.StrictMode>
 );
 
-// Регистрация Service Worker
+// Регистрация Service Worker с правильным scope
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
+        // Определяем базовый путь динамически
+        const basePath = window.location.pathname.startsWith('/MF_PWA_A') ? '/MF_PWA_A' : '';
+        const swUrl = `${basePath}/sw.js`;
+        const scope = `${basePath}/`;
+        
+        console.log('Registering Service Worker:', swUrl, 'with scope:', scope);
+        
+        navigator.serviceWorker.register(swUrl, { scope: scope })
             .then(registration => {
-                console.log('SW registered: ', registration);
+                console.log('SW registered successfully with scope: ', registration.scope);
             })
             .catch(registrationError => {
                 console.log('SW registration failed: ', registrationError);

@@ -2,22 +2,22 @@
   "name": "Мой тестовый сайт",
   "short_name": "МойСайт",
   "description": "Мой первый PWA сайт",
-  "start_url": "/",
+  "start_url": "./",
   "lang": "fr",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
   "orientation": "any",
-  "scope": "/",
+  "scope": "./",
   "icons": [
     {
-      "src": "/icons/icon1.png",
+      "src": "./icons/icon1.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icons/icon2.png",
+      "src": "./icons/icon2.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
