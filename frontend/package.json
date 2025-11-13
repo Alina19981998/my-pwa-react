@@ -16,12 +16,14 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:clean": "rm -rf build && react-scripts build",
+    "docker:build:frontend": "npm run build:clean && docker-compose build frontend",
+    "docker:build:all": "npm run build:clean && docker-compose build",
+    "docker:up": "npm run build:clean && docker-compose up -d",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev": "npm start",
-    "docker:build": "docker-compose build",
-    "docker:prod": "docker-compose up react-app-prod",
-    "docker:dev": "docker-compose up react-app-dev",
+    "docker:prod": "docker-compose up -d",
     "docker:down": "docker-compose down"
   },
   "eslintConfig": {
